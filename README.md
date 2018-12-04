@@ -282,3 +282,4 @@ http/ssh
   ```
   $ git remote add origin git@github.com:weileifrank/gitGuide.git
   ```
+![](imgs/19.png)
