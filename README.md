@@ -145,18 +145,48 @@ $ git init
   ### 版本回退
   
   - 当前版本往上回退版本`git reset --hard HEAD^`
-  
+  ![](imgs/6.png)
   
   - 往上回退n个版本`git reset --hard HEAD~n`
-  
+  ![](imgs/7.png)
   
   - 回退到某一个版本:`git reset  --hard commit id`
-  
+  ![](imgs/8.png)
   
   - 如果回退之后后悔,想恢复到最新版本
   
     - 通过`git reflog`查看每一次记录
-  
-  
     - 回退到指定的`commit id`
+  ![](imgs/9.png)
   
+## 创建与删除分支
+
+- 查看当前分支`git branch`
+
+  ```
+  $ git branch
+  * master
+  ```
+
+- 创建并切换分支`git checkout -b dev `
+
+  ```
+  $ git checkout -b dev
+  Switched to a new branch 'dev'
+  D       Pet.java
+  ```
+
+  这个相当于两个命令
+
+  `git branch mary`创建dev分支
+
+  `git checkout mary`切换到dev分支
+
+- 删除分支`git branch -d dev`
+
+  ```
+  $ git branch -d dev
+  Deleted branch dev (was 9901b67).
+  ```
+
+  ​
