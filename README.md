@@ -187,5 +187,54 @@ $ git init
   $ git branch -d dev
   Deleted branch dev (was 80b3178).
   ```
+### 合并分支
 
+把dev开发的代码合并到master主分支上
+
+- master主分支执行`git merge dev`
+
+  dev分支增加了person.go
+
+  ![](imgs/10.png)
+
+  没有冲突是Fast-forward快进模式
   ​
+  ### 解决冲突
+  
+  首先张三从zhangsan分支提交了对Pter.java的修改,修改内容如下
+  
+  ```
+  class Peter{
+  	int a = 10;
+  }
+  ```
+  
+  并把修改合并到主分支
+  
+  
+  
+  mary开发中也对Peter.java进行了修改,修改如下
+  
+  ```
+  class Peter{
+  	String name = "mary";
+  }
+  ```
+  
+  想要把mary分支合并到主分支master,就会出问题
+  
+  ![](img/16.png)
+  
+  这里就会说明有冲突
+  
+  
+  
+  代码中也会出现提示
+  
+  ![](img/17.png)
+  
+  HEAD代表当前分支版本,mary代表mary分支
+  
+  
+  
+  解决方案就是修改冲突并再次提交
