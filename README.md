@@ -237,3 +237,48 @@ $ git init
   解决方案就是修改冲突并再次提交
   ![](imgs/13.png)
   ![](imgs/14.png)
+  
+### 远程仓库github
+
+[GitHub](https://github.com/)是一个基于Web的Git仓库托管服务，在这里您可以免费创建一个共享的代码仓库。希望在GitHub上创建私有存储库的人或组织可以购买付费帐户。
+
+http/ssh
+
+- 第1步：创建SSH Key。
+
+  在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有`id_rsa`和`id_rsa.pub`这两个文件。如果没有,执行下面命令，创建SSH Key：
+
+  ```
+  $ ssh-keygen -t rsa -C "1138289316@qq.com" 
+  ```
+
+  建议使用真实的邮箱地址
+
+  `id_rsa`是私钥，`id_rsa.pub`是公钥
+
+- 第2步：登陆GitHub，打开“settings”，“SSH Keys”页面：
+
+  然后，点“New SSH Key”，填上任意Title，在Key文本框里粘贴`id_rsa.pub`文件的内容：
+
+![](imgs/15.png)
+![](imgs/16.png)
+
+### 创建远程仓库
+
+- 首先，登陆GitHub，在右上角找到“newrepository”按钮，创建一个新的仓库
+
+  ![](imgs/17.png)
+
+- 在Repository name填入`gitGuide`仓库名，其他保持默认设置
+
+![](imgs/18.png)
+
+### 添加远程仓库
+
+目前`gitGuide`仓库还是空的，我们可以从这个仓库克隆出新的仓库，也可以把本地仓库与之关联，然后把本地仓库的内容推送到GitHub仓库。
+
+- 本地仓库关联远程仓库  `git remote add origin SSH`
+
+  ```
+  $ git remote add origin git@github.com:weileifrank/gitGuide.git
+  ```
