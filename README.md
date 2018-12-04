@@ -187,5 +187,51 @@ $ git init
   $ git branch -d dev
   Deleted branch dev (was 80b3178).
   ```
+### 合并分支
 
+把dev开发的代码合并到master主分支上
+
+- master主分支执行`git merge dev`
+
+  dev分支增加了person.go
+
+  ![](imgs/10.png)
+
+  没有冲突是Fast-forward快进模式
   ​
+  ### 解决冲突
+  
+  首先dev分支提交了对main.go的修改,修改内容如下
+  
+  ```
+  func main() {
+  	fmt.Println("hello git")
+  	str:="这是dev分支的字符串"
+  	fmt.Printf("%s\n",str)
+  }
+  ```
+  
+  并把修改commit  
+  
+  master分支开发中也对main.go进行了修改,修改如下
+  
+  ```
+  func main() {
+  	fmt.Println("hello git")
+  	str:="这是master分支的字符串"
+  	fmt.Printf("%s\n",str)
+  }
+  ```
+  
+  想要把dev分支合并到主分支master,就会出问题
+  
+  ![](imgs/11.png)
+  
+  这里就会有冲突 
+  
+  代码中也会出现提示
+  
+  ![](imgs/12.png)
+  
+  HEAD代表当前分支版本,dev代表dev分支
+  解决方案就是修改冲突并再次提交
