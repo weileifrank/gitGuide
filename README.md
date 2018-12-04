@@ -283,3 +283,30 @@ http/ssh
   $ git remote add origin git@github.com:weileifrank/gitGuide.git
   ```
 ![](imgs/19.png)
+
+### 推送到远程仓库
+
+- 推送到远程仓库`git push -u origin 分支`
+
+  ```
+  $ git push -u origin master
+  ```
+
+  把当前分支`master`推送到远程`master`分支。`-u`会把本地`master`分支和远程`master`分支关联起来
+
+  下一次再提交的话就可以简便
+
+  ```
+  $ git push origin master
+  ```
+  
+  如果要推送其他分支，比如`dev`，就改成：
+  
+  ```
+  $ git push origin dev
+  
+  ```
+  
+
+
+  ​
