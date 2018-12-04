@@ -307,6 +307,19 @@ http/ssh
   
   ```
   
+  如果 `git push -u origin master`出现如下结果,说明需要先拉取 'git pull ...'
+```$xslt
+$ git push -u origin master
+To github.com:weileifrank/gitGuide.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:weileifrank/gitGuide.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+```
+  拉取过程也可能出现异常,看下面的案例
   如果此时与远程仓库代码起点不同,扔不能提交,也不能拉去,需要设置 `git pull --allow-unrelated-histories`
 ```$xslt
 
