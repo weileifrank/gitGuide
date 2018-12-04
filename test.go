@@ -4,5 +4,10 @@ import "fmt"
 
 func main() {
 	a := 1
-	fmt.Println(a)
+	b:= 2
+	sum := add(a, b)
+	fmt.Println(sum)
+}
+func add(a, b int) int {
+	return a + b
 }
