@@ -173,20 +173,19 @@ $ git init
   ```
   $ git checkout -b dev
   Switched to a new branch 'dev'
-  D       Pet.java
   ```
 
   这个相当于两个命令
 
-  `git branch mary`创建dev分支
+  `git branch dev`创建dev分支
 
-  `git checkout mary`切换到dev分支
+  `git checkout dev`切换到dev分支
 
 - 删除分支`git branch -d dev`
 
   ```
   $ git branch -d dev
-  Deleted branch dev (was 9901b67).
+  Deleted branch dev (was 80b3178).
   ```
 
   ​
