@@ -235,3 +235,5 @@ $ git init
   
   HEAD代表当前分支版本,dev代表dev分支
   解决方案就是修改冲突并再次提交
+  ![](imgs/13.png)
+  ![](imgs/14.png)
