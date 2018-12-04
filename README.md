@@ -307,3 +307,73 @@ http/ssh
   
   ```
   
+  如果此时与远程仓库代码起点不同,扔不能提交,也不能拉去,需要设置 `git pull --allow-unrelated-histories`
+```$xslt
+
+w1138@DESKTOP-4ETLG7Q MINGW64 /d/GoProjects/src/gitdemo (master)
+$ git pull origin master
+From github.com:weileifrank/gitGuide
+ * branch            master     -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+
+w1138@DESKTOP-4ETLG7Q MINGW64 /d/GoProjects/src/gitdemo (master)
+$ git pull --allow-unrelated-histories
+Auto-merging README.md
+CONFLICT (add/add): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+```
+
+此时代码有冲突,需要到对应的文件处理冲突并提交远程仓库
+
+```$xslt
+w1138@DESKTOP-4ETLG7Q MINGW64 /d/GoProjects/src/gitdemo (master|MERGING)
+$ git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 13 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+        both added:      README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+w1138@DESKTOP-4ETLG7Q MINGW64 /d/GoProjects/src/gitdemo (master|MERGING)
+$ git add .
+
+
+w1138@DESKTOP-4ETLG7Q MINGW64 /d/GoProjects/src/gitdemo (master|MERGING)
+$ git commit -m '解决了与远程仓库的冲突'
+[master 20bbadd] 解决了与远程仓库的冲突
+
+w1138@DESKTOP-4ETLG7Q MINGW64 /d/GoProjects/src/gitdemo (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 14 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+
+w1138@DESKTOP-4ETLG7Q MINGW64 /d/GoProjects/src/gitdemo (master)
+$ git push -u origin master
+Enumerating objects: 73, done.
+Counting objects: 100% (73/73), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (70/70), done.
+Writing objects: 100% (71/71), 509.15 KiB | 1.67 MiB/s, done.
+Total 71 (delta 22), reused 0 (delta 0)
+remote: Resolving deltas: 100% (22/22), done.
+To github.com:weileifrank/gitGuide.git
+   648518a..20bbadd  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+```
