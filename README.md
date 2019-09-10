@@ -62,7 +62,7 @@ core.ignorecase=true
 $ git init
  Initialized empty Git repository in D:/GoProjects/src/gitdemo/.git/
 ```
- 
+
   通过`git init`命令把这个目录变成Git可以管理的仓库：
 
   目录下多了一个`.git`的目录，这个目录是Git来跟踪管理版本库的
@@ -108,7 +108,7 @@ $ git init
   $ git add main.go
   ```
 
-  ​
+  
 
 - 一次添加多个`git add --all` 或者`git add .`
 
@@ -237,7 +237,6 @@ $ git init
   解决方案就是修改冲突并再次提交
   ![](imgs/13.png)
   ![](imgs/14.png)
-  
 ### 远程仓库github
 
 [GitHub](https://github.com/)是一个基于Web的Git仓库托管服务，在这里您可以免费创建一个共享的代码仓库。希望在GitHub上创建私有存储库的人或组织可以购买付费帐户。
@@ -390,3 +389,20 @@ To github.com:weileifrank/gitGuide.git
 Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 ```
+
+###  给版本打tag
+
+- 格式 `-a`参数来创建一个带备注的tag,备注信息有`-m`指定
+
+  ```shell
+  git tag -a tagName -m "my tag"
+  ```
+
+- 示例:
+
+  ```
+  git tag -a v1.0.1 -m "优化了刷新token,别的请求会出现token失效的问题了"
+  ```
+
+  
+
