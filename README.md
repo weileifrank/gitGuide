@@ -390,6 +390,16 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 ```
 
+
+
+### 查看当前关联的远程分支url
+
+```
+git remote -v
+```
+
+
+
 ###  给版本打tag
 
 - 格式 `-a`参数来创建一个带备注的tag,备注信息有`-m`指定
@@ -405,4 +415,20 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
   ```
 
   
+
+## 忽略某个文件
+
+- 参考链接
+
+  ```
+  https://blog.csdn.net/qq_28285347/article/details/81011448
+  ```
+
+  
+
+
+
+
+
+
 
