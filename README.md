@@ -187,6 +187,15 @@ $ git init
   $ git branch -d dev
   Deleted branch dev (was 80b3178).
   ```
+  
+- 删除远程分支`git push origin --delete 远程分支名称`
+
+  ```shell
+  git push origin --delete dev
+  ```
+
+  
+
 ### 合并分支
 
 把dev开发的代码合并到master主分支上
