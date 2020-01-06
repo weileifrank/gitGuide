@@ -423,6 +423,34 @@ git remote -v
   git tag -a v1.0.1 -m "优化了刷新token,别的请求会出现token失效的问题了"
   ```
 
+- 查看某个tag对应的commit版本号:`git show tag版本号`
+
+  ```
+  $ git show v1.0.2
+  tag v1.0.2
+  Tagger: frank <123>
+  Date:   Mon Jan 6 19:52:20 2020 +0800
+  
+  2020/01/06 晚上发布的版本,修复了重置密码不生效的bug
+  
+  commit 1f7a3c582f08ac082566c6ea1e4d8dd9738dc374
+  Author: frank <123>
+  Date:   Mon Jan 6 19:34:04 2020 +0800
+  
+      修改配置文件spring.profiles.active=prod  这个是线上的
+  
+  diff --git a/src/main/resources/application.properties b/src/main/resources/application.properties
+  index 257b306..a015c68 100644
+  --- a/src/main/resources/application.properties
+  +++ b/src/main/resources/application.properties
+  @@ -1 +1 @@
+  -spring.profiles.active=dev
+  \ No newline at end of file
+  +spring.profiles.active=prod
+  \ No newline at end of file
+  
+  ```
+
   
 
 ## 忽略某个文件
