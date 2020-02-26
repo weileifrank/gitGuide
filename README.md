@@ -237,7 +237,7 @@ $ git init
 
   ![](imgs/11.png)
 
-  这里就会有冲突 
+  这里就会有冲突 ,可以通过<font color='#ff0000'>`git diff`</font>查看哪个文件处理了冲突
 
   代码中也会出现提示
 
@@ -247,6 +247,7 @@ $ git init
   解决方案就是修改冲突并再次提交
   ![](imgs/13.png)
   ![](imgs/14.png)
+
 ### 远程仓库github
 
 [GitHub](https://github.com/)是一个基于Web的Git仓库托管服务，在这里您可以免费创建一个共享的代码仓库。希望在GitHub上创建私有存储库的人或组织可以购买付费帐户。
