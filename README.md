@@ -142,24 +142,25 @@ $ git init
 
   注:commit后面的一串字符是`commit id`版本号,SHA1计算 ​
   
-  ### 版本回退
-  
+- `git log --pretty=oneline` 单行查看历史提交记录
+### 版本回退
+
   - 当前版本往上回退版本`git reset --hard HEAD^`
-  ![](imgs/6.png)
+    ![](imgs/6.png)
   
   - 往上回退n个版本`git reset --hard HEAD~n`
-  ![](imgs/7.png)
+    ![](imgs/7.png)
   
   - 回退到某一个版本:`git reset  --hard commit id`
-  ![](imgs/8.png)
+    ![](imgs/8.png)
   
   - 如果回退之后后悔,想恢复到最新版本
   
     - 通过`git reflog`查看每一次记录
     - 回退到指定的`commit id`
-  ![](imgs/9.png)
-  
-## 创建与删除分支
+    ![](imgs/9.png)
+
+### 创建与删除分支
 
 - 查看当前分支`git branch`
 
@@ -208,10 +209,10 @@ $ git init
 
   没有冲突是Fast-forward快进模式
   ​
-  ### 解决冲突
-  
+### 解决冲突
+
   首先dev分支提交了对main.go的修改,修改内容如下
-  
+
   ```
   func main() {
   	fmt.Println("hello git")
@@ -219,11 +220,11 @@ $ git init
   	fmt.Printf("%s\n",str)
   }
   ```
-  
+
   并把修改commit  
-  
+
   master分支开发中也对main.go进行了修改,修改如下
-  
+
   ```
   func main() {
   	fmt.Println("hello git")
@@ -231,17 +232,17 @@ $ git init
   	fmt.Printf("%s\n",str)
   }
   ```
-  
+
   想要把dev分支合并到主分支master,就会出问题
-  
+
   ![](imgs/11.png)
-  
+
   这里就会有冲突 
-  
+
   代码中也会出现提示
-  
+
   ![](imgs/12.png)
-  
+
   HEAD代表当前分支版本,dev代表dev分支
   解决方案就是修改冲突并再次提交
   ![](imgs/13.png)
@@ -453,7 +454,7 @@ git remote -v
 
   
 
-## 忽略某个文件
+### 忽略某个文件
 
 - 参考链接
 
