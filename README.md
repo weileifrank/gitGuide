@@ -9,18 +9,23 @@
  git version 2.19.2.windows.1
 ```
 ### 自我介绍给git
-每次 Git 提交时都会引用这两条信息，说明是谁提交了更新
+- 每次 Git 提交时都会引用这两条信息，说明是谁提交了更新
 
 ```
-git config --global user.name "frank
+git config --global user.name "frank"
 git config --global user.email "1138289316@qq.com"
 ```
 
-| **   | 如果您希望能够为不同的项目使用不同的用户名和电子邮件，请在没有*--global*选项的情况下从项目目录运行上述命令。 |
-| ---- | ------------------------------------------------------------ |
-|      |                                                              |
+- 如果您希望能够为不同的项目使用不同的用户名和电子邮件，请在没有*--global*选项的情况下从项目目录运行上述命令。
 
-- 查看用户信息`git config --list`
+  ```
+  //cd 到某个项目的根目录下
+  
+  git config  user.name "frank"
+  git config  user.email "1138289316@qq.com"
+  ```
+
+- 查看git全局配置信息
 ```$xslt
 $ git config --list
 core.symlinks=false
