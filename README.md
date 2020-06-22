@@ -187,6 +187,14 @@ $ git init
 
   `git checkout dev`切换到dev分支
 
+- 创建本地分支
+
+  ```shell
+  创建本地分支：git checkout -b LocalDev origin/dev (LocalDev 为本地分支名，dev为远程分支名)
+  ```
+
+  
+
 - 删除分支`git branch -d dev`
 
   ```
@@ -412,6 +420,14 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 ```
 git remote -v
+```
+
+### 刷新本地分支列表
+
+- 执行下面命令后如果ide还不线上,请重启ide
+
+```shell
+git remote update origin --prune
 ```
 
 
