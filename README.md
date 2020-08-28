@@ -446,6 +446,12 @@ git remote update origin --prune
   git tag -a v1.0.1 -m "优化了刷新token,别的请求会出现token失效的问题了"
   ```
 
+- 查看分支
+
+  ```shell
+  git tag
+  ```
+  
 - 查看某个tag对应的commit版本号:`git show tag版本号`
 
   ```
@@ -472,6 +478,12 @@ git remote update origin --prune
   +spring.profiles.active=prod
   \ No newline at end of file
   
+  ```
+
+- 把分支的tag推送到远程服务器上
+
+  ```shell
+  git push origin --tags
   ```
 
   
