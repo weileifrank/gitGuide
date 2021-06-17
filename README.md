@@ -148,6 +148,10 @@ $ git init
   注:commit后面的一串字符是`commit id`版本号,SHA1计算 ​
   
 - `git log --pretty=oneline` 单行查看历史提交记录
+
+- git log --graph 查看各个分支的历史提交曲线
+
+- git reflog master 查看master分支的提交历史
 ### 版本回退
 
   - 当前版本往上回退版本`git reset --hard HEAD^`
@@ -187,10 +191,23 @@ $ git init
 
   `git checkout dev`切换到dev分支
 
+  `git checkout v1.20'`切换到v1.20对应的记录
+
 - 创建本地分支
 
   ```shell
   创建本地分支：git checkout -b LocalDev origin/dev (LocalDev 为本地分支名，dev为远程分支名)
+  创建本地分支：git checkout -b LocalDev1 dev 基于本地的dev分支创建localdev1,并切换过去
+  ```
+
+- 修改分支
+
+  ```shell
+  修改本地分支名称:git branch -m branch-A branch-B
+  删除远程分支:git push origin :branch-A
+  将本地分支与远程新分支关联起来:
+  git push --set-upstream origin branch-B
+  
   ```
 
   
@@ -438,12 +455,16 @@ git remote update origin --prune
 
   ```shell
   git tag -a tagName -m "my tag"
+  
+  git tag versionName
   ```
 
 - 示例:
 
   ```
   git tag -a v1.0.1 -m "优化了刷新token,别的请求会出现token失效的问题了"
+  
+  git tag v1.20
   ```
 
 - 查看分支
