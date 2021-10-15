@@ -193,6 +193,14 @@ $ git init
 
   `git checkout v1.20'`切换到v1.20对应的记录
 
+- 拉取远程指定分支
+
+  ```shell
+  git checkout -b develop origin/develop
+  ```
+
+  
+
 - 创建本地分支
 
   ```shell

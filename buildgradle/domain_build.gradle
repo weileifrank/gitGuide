@@ -1,0 +1,10 @@
+apply from: '../basemodule.gradle'
+dependencies {
+    api project(path: ':libbase')
+//    api DependencyConfig.Libraries.ktxCore
+//    api DependencyConfig.Libraries.appCompat
+//    api DependencyConfig.Libraries.material
+//    testImplementation DependencyConfig.Libraries.junit
+//    androidTestImplementation DependencyConfig.Libraries.testExtJunit
+//    androidTestImplementation DependencyConfig.Libraries.espressoCore
+}

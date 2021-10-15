@@ -1,0 +1,121 @@
+import com.lft.script.*
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk DependencyConfig.Version.compileSdkVersion
+
+    defaultConfig {
+//        applicationId "com.lft.hileia"
+        applicationId DependencyConfig.applicationId
+        minSdk DependencyConfig.Version.minSdkVersion
+        targetSdk DependencyConfig.Version.targetSdkVersion
+        versionCode DependencyConfig.Version.versionCode
+        versionName DependencyConfig.Version.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    kapt {
+        javacOptions {
+            option("-Adagger.fastInit=ENABLED")
+            option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true")
+        }
+    }
+}
+
+dependencies {
+
+    implementation project(path: ':libbase')
+    implementation project(path: ':data')
+    implementation project(path: ':domain')
+    kapt DependencyConfig.Libraries.hiltCompiler
+    implementation DependencyConfig.Libraries.hilt
+
+//    implementation 'androidx.core:core-ktx:1.6.0'
+//    implementation 'androidx.appcompat:appcompat:1.3.1'
+//    implementation 'com.google.android.material:material:1.4.0'
+//    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+//    testImplementation 'junit:junit:4.+'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+//    kapt DependencyConfig.Libraries.roomCompiler
+//    kapt DependencyConfig.Libraries.glideCompiler
+//    kapt DependencyConfig.Libraries.hiltCompiler
+//
+//    implementation DependencyConfig.Libraries.appCompat
+//    implementation DependencyConfig.Libraries.constraintLayout
+//    implementation DependencyConfig.Libraries.ktxCore
+//    implementation DependencyConfig.Libraries.kotlin
+//    implementation DependencyConfig.Libraries.fragmentKtx
+//    implementation DependencyConfig.Libraries.livedataKtx
+//    implementation DependencyConfig.Libraries.viewmodelKtx
+//    implementation DependencyConfig.Libraries.hilt
+//    implementation DependencyConfig.Libraries.room
+//    implementation DependencyConfig.Libraries.roomKtx
+//    implementation DependencyConfig.Libraries.viewpager2
+//    implementation DependencyConfig.Libraries.cardview
+//    implementation DependencyConfig.Libraries.recyclerview
+//    implementation DependencyConfig.Libraries.multidex
+//    implementation DependencyConfig.Libraries.work
+//    implementation DependencyConfig.Libraries.glide
+//    implementation DependencyConfig.Libraries.material
+//    implementation DependencyConfig.Libraries.autosize
+//    implementation DependencyConfig.Libraries.utils
+//    implementation DependencyConfig.Libraries.refresh
+//    implementation DependencyConfig.Libraries.refreshHeader
+//    implementation DependencyConfig.Libraries.refreshFooter
+//    implementation DependencyConfig.Libraries.recyclerAdapter
+//    implementation DependencyConfig.Libraries.annotations
+//    implementation DependencyConfig.Libraries.rxJava
+//    implementation DependencyConfig.Libraries.rxAndroid
+//    implementation DependencyConfig.Libraries.rxbinding
+//    implementation DependencyConfig.Libraries.gson
+//    implementation DependencyConfig.Libraries.okio
+//    implementation DependencyConfig.Libraries.okhttpLog
+//    implementation DependencyConfig.Libraries.retrofitConverter
+//    implementation DependencyConfig.Libraries.retrofit
+//    implementation DependencyConfig.Libraries.coroutines
+//    implementation DependencyConfig.Libraries.coroutinesCore
+//
+//    implementation DependencyConfig.Libraries.mmkv
+//    implementation DependencyConfig.Libraries.permissionx
+//    implementation DependencyConfig.Libraries.immersionbar
+//    implementation DependencyConfig.Libraries.immersionbar_components
+//    implementation DependencyConfig.Libraries.immersionbar_ktx
+//
+//    kaptAndroidTest DependencyConfig.Libraries.hiltCompiler
+//    androidTestImplementation DependencyConfig.Libraries.coreTesting
+//    androidTestImplementation DependencyConfig.Libraries.espressoContrib
+//    androidTestImplementation DependencyConfig.Libraries.espressoCore
+//    androidTestImplementation DependencyConfig.Libraries.espressoIntents
+//    androidTestImplementation DependencyConfig.Libraries.testExtJunit
+//    androidTestImplementation DependencyConfig.Libraries.uiautomator
+//    androidTestImplementation DependencyConfig.Libraries.workTesting
+//    androidTestImplementation DependencyConfig.Libraries.truth
+//    androidTestImplementation DependencyConfig.Libraries.hiltTesting
+//    androidTestImplementation DependencyConfig.Libraries.coroutinesTest
+//    testImplementation DependencyConfig.Libraries.junit
+
+}
